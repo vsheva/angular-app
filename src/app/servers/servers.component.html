@@ -6,13 +6,13 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreate()">Add server</button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <!--<p>{{serverCreationStatus}}</p>-->
-<p>Server was created! Server name is  {{serverName}} </p>
+<p *ngIf="serverCreated">Server was created! Server name is  {{serverName}} </p>
 <app-server></app-server>
 <app-server></app-server>
 <hr>
 
 <label>Username</label>
 <input type="text" class="form-control" [(ngModel)]="userName">
-<p *ngIf="serverCreated">{{userName}}</p>
+<p >{{userName}}</p>
 <!--<button class="btn btn-primary" [disabled]="userName===''" (click)="onUpdateUserName($event)">Reset</button>-->
 <button class="btn btn-primary" [disabled]="userName===''" (click)="userName=''">Reset</button>
