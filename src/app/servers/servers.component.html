@@ -6,10 +6,15 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServerCreate()">Add server</button>
 <!--<p [innerText]="allowNewServer"></p>-->
 <!--<p>{{serverCreationStatus}}</p>-->
-<p *ngIf="serverCreated">Server was created! Server name is  {{serverName}} </p>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="serverCreated ">Server was created! Server name is  {{serverName}} </p>
+<!--<ng-template #noserver>No server was created! </ng-template>-->
+<app-server *ngFor="let serv of servaks"></app-server>
+
 <hr>
+
+
+
+
 
 <label>Username</label>
 <input type="text" class="form-control" [(ngModel)]="userName">
